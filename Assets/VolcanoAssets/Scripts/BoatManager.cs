@@ -6,9 +6,9 @@ public class BoatManager : MonoBehaviour {
 	public GameObject[] SpawnLocations;
 	public GameObject[] EndLocations;
 	public float SpawnTime;
-	public Movement BoatPrefab;
+	public Rigidbody BoatPrefab;
 	
-	float _timeSinceLastSpawn;
+	float _timeSinceLastSpawn = 100f;
 	
 	// Use this for initialization
 	void Start () {
@@ -29,9 +29,13 @@ public class BoatManager : MonoBehaviour {
 			int spawnNum = Random.Range(0, SpawnLocations.Length);
 			Vector3 spawnLocation = SpawnLocations[spawnNum].transform.position;
 
-			Movement newBoat = Instantiate(BoatPrefab, spawnLocation, Quaternion.identity) as Movement;
+			Quaternion rot = Quaternion.LookRotation(EndLocations[spawnNum].transform.position - spawnLocation);
 			
-			newBoat.Target = EndLocations[spawnNum];
+			Rigidbody newBoat = Instantiate(BoatPrefab, spawnLocation, rot) as Rigidbody;
+			
+			newBoat.AddRelativeForce(Vector3.forward * 500f, ForceMode.Impulse);
+			
+			//newBoat.Target = EndLocations[spawnNum];
 			
 			_timeSinceLastSpawn = 0;
 		}

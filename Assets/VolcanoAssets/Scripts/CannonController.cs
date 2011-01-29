@@ -15,6 +15,8 @@ public class CannonController : MonoBehaviour {
 	
 	public GameObject TargetMarkerPrefab;
 	
+	public float Spin;
+	
 	float GRAVITY = 9.81f;
 	
 	// Use this for initialization
@@ -55,8 +57,16 @@ public class CannonController : MonoBehaviour {
 			}
 			
 			newProjectile.AddRelativeForce(0, 0, Power, ForceMode.VelocityChange);
-			
+			//newProjectile.AddRelativeTorque(Random.Range(0, Spin), Random.Range(0, Spin), Random.Range(0, Spin), ForceMode.Impulse);
 			Fire=false;
+		}
+		
+		if(Input.GetMouseButtonDown(1))
+		{
+			Rigidbody newProjectile = Instantiate(ProjectilePrefab, Target.CurrentPosition, this.transform.rotation) as Rigidbody;
+			
+			newProjectile.transform.Translate(0, 10, 0, Space.World);
+			
 		}
 		
 	}

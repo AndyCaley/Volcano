@@ -13,6 +13,15 @@ public class Movement : MonoBehaviour {
 	void Start () {
 	}
 	
+	
+	void Update()
+	{
+		
+		
+	}
+	
+	/*
+	 * //Old not so cool movement
 	// Update is called once per frame
 	void Update () {
 		if(Target == null)
@@ -28,4 +37,5 @@ public class Movement : MonoBehaviour {
 		this.transform.rotation = rot;
 
 	}
+	*/
 }

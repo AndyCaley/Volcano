@@ -1,0 +1,23 @@
+print "Starting maya loading and fbx conversion \n";
+	
+if (`file -q -exists "/Users/acaley/Documents/Unity/Volcano/Assets/VolcanoAssets/Models/AnimalLuancher_tugBoat.ma"`)
+{		
+	file -o "/Users/acaley/Documents/Unity/Volcano/Assets/VolcanoAssets/Models/AnimalLuancher_tugBoat.ma";
+	FBXExportEmbeddedTextures -v false;
+	// FBXExportHardEdges -v true;
+	FBXExportApplyConstantKeyReducer -v false;
+	FBXExportShowUI -v false;
+
+	print "Before fbx export\n";
+	FBXExport -f "/Users/acaley/Documents/Unity/Volcano/Temp/ExportedFBXFile.fbx";
+	print "after fbx export\n";
+}
+else
+	print "Could not open Maya file.";
+
+
+system ("rm \"/Users/acaley/Documents/Unity/Volcano/Temp/CommandPipe\"");
+
+$donepipeKill = `fopen "/Users/acaley/Documents/Unity/Volcano/Temp/SyncPipeKill" "w"`;
+fwrite $donepipeKill "Done";
+fclose $donepipeKill;

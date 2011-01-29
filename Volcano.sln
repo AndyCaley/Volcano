@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+
+Project("{C1258DA2-EBD7-625D-CB2A-1BB6F176493E}") = "Volcano", "Volcano.csproj", "{EC88BCC3-E048-D985-7A28-E42BC10A25D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC88BCC3-E048-D985-7A28-E42BC10A25D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC88BCC3-E048-D985-7A28-E42BC10A25D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC88BCC3-E048-D985-7A28-E42BC10A25D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC88BCC3-E048-D985-7A28-E42BC10A25D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	
+EndGlobal
