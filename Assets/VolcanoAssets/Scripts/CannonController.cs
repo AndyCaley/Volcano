@@ -47,7 +47,7 @@ public class CannonController : MonoBehaviour {
 			
 		}	
 		
-		if(Input.GetMouseButtonDown(0))
+		if(Input.GetMouseButtonDown(1))
 		{
 			Rigidbody newProjectile = Instantiate(ProjectilePrefab, this.transform.position, this.transform.rotation) as Rigidbody;
 			
@@ -61,10 +61,9 @@ public class CannonController : MonoBehaviour {
 			Fire=false;
 		}
 		
-		if(Input.GetMouseButtonDown(1))
+		if(Input.GetMouseButtonDown(0))
 		{
 			Rigidbody newProjectile = Instantiate(ProjectilePrefab, Target.CurrentPosition, this.transform.rotation) as Rigidbody;
-			
 			newProjectile.transform.Translate(0, 10, 0, Space.World);
 			
 		}
