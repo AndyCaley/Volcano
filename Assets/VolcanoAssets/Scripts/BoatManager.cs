@@ -33,7 +33,7 @@ public class BoatManager : MonoBehaviour {
 			
 			Rigidbody newBoat = Instantiate(BoatPrefab, spawnLocation, rot) as Rigidbody;
 			
-			newBoat.AddRelativeForce(Vector3.forward * 500f, ForceMode.Impulse);
+			newBoat.AddRelativeForce(Vector3.forward * 10f, ForceMode.Impulse);
 			
 			//newBoat.Target = EndLocations[spawnNum];
 			

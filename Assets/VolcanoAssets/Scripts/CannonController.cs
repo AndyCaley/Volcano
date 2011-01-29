@@ -17,6 +17,8 @@ public class CannonController : MonoBehaviour {
 	
 	public float Spin;
 	
+	public float Distance;
+	
 	float GRAVITY = 9.81f;
 	
 	// Use this for initialization
@@ -28,19 +30,25 @@ public class CannonController : MonoBehaviour {
 	void Update () {
 		if(Target.IsActive)
 		{
-			float distance = Vector3.Distance(this.transform.position, Target.CurrentPosition);
-		
-			Angle = .5f*Mathf.Asin((GRAVITY*distance)/(Power*Power)) * Mathf.Rad2Deg;
+			// simple delta direction from cannon to mouse pointer position
+			Distance = Vector3.Distance(this.transform.position, Target.CurrentPosition);
+			
+//			Distance = distance;
+			
+			// Rotation around local X of the cannon 
+			Angle = 0.5f * Mathf.Asin((GRAVITY*Distance)/(Power*Power)) * Mathf.Rad2Deg;
+			Debug.Log (Angle);
 			
 			Angle = 90f - Angle;
 			
 			if(!float.IsNaN(Angle))
 			{
-				
+				// vector relative to the cannon's position
 				Vector3 lookToVector = Target.CurrentPosition - this.transform.position;
+				// override y for angle logic
 				lookToVector.y = 0;
-				this.transform.rotation = Quaternion.LookRotation(lookToVector);
 				
+				this.transform.rotation = Quaternion.LookRotation(lookToVector);
 				this.transform.rotation *= Quaternion.AngleAxis(-Angle, Vector3.right);
 
 			}
@@ -56,8 +64,10 @@ public class CannonController : MonoBehaviour {
 				Instantiate(TargetMarkerPrefab, Target.CurrentPosition, Quaternion.identity);
 			}
 			
+			newProjectile.transform.rotation = this.transform.rotation;
+			
 			newProjectile.AddRelativeForce(0, 0, Power, ForceMode.VelocityChange);
-			//newProjectile.AddRelativeTorque(Random.Range(0, Spin), Random.Range(0, Spin), Random.Range(0, Spin), ForceMode.Impulse);
+			newProjectile.AddRelativeTorque(Random.Range(0, Spin), Random.Range(0, Spin), Random.Range(0, Spin), ForceMode.Impulse);
 			Fire=false;
 		}
 		
