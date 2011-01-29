@@ -1,0 +1,16 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" ctype="Workspace" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/VolcanoAssets/Scripts/BoatManager.cs" ctype="Workbench">
+    <Files>
+      <File FileName="Assets/VolcanoAssets/Scripts/CannonController.cs" Line="69" Column="74" />
+      <File FileName="Assets/VolcanoAssets/Scripts/AnimalManager.cs" Line="25" Column="71" />
+      <File FileName="Assets/VolcanoAssets/Scripts/Movement.cs" Line="19" Column="3" />
+      <File FileName="Assets/VolcanoAssets/Scripts/BoatManager.cs" Line="36" Column="48" />
+      <File FileName="Assets/VolcanoAssets/Scripts/BoatScript.cs" Line="26" Column="6" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches ctype="PinnedWatchStore" />
+</Properties>

@@ -57,8 +57,10 @@
      <Compile Include="Assets\VolcanoAssets\Scripts\BoatManager.cs" />
      <Compile Include="Assets\VolcanoAssets\Scripts\BoatScript.cs" />
      <Compile Include="Assets\VolcanoAssets\Scripts\CannonController.cs" />
+     <Compile Include="Assets\VolcanoAssets\Scripts\GameLogic.cs" />
      <Compile Include="Assets\VolcanoAssets\Scripts\MouseAimer.cs" />
      <Compile Include="Assets\VolcanoAssets\Scripts\Movement.cs" />
+     <Compile Include="Assets\VolcanoAssets\Scripts\ProjectileHarvester.cs" />
      <Compile Include="Assets\VolcanoAssets\Scripts\TurnToTarget.cs" />
      <None Include="Assets\VolcanoAssets\Shaders\LavaShader.shader" />
   </ItemGroup>

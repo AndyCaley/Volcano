@@ -37,7 +37,7 @@ public class CannonController : MonoBehaviour {
 			
 			// Rotation around local X of the cannon 
 			Angle = 0.5f * Mathf.Asin((GRAVITY*Distance)/(Power*Power)) * Mathf.Rad2Deg;
-			Debug.Log (Angle);
+			//Debug.Log (Angle);
 			
 			Angle = 90f - Angle;
 			
