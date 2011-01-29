@@ -7,6 +7,8 @@ public class BoatManager : MonoBehaviour {
 	public GameObject[] EndLocations;
 	public float SpawnTime;
 	public Rigidbody BoatPrefab;
+	public float MinPower=300;
+	public float MaxPower=1000;
 	
 	float _timeSinceLastSpawn = 100f;
 	
@@ -26,14 +28,20 @@ public class BoatManager : MonoBehaviour {
 				
 		if(_timeSinceLastSpawn > SpawnTime)
 		{
+			float power=Random.value*(MaxPower-MinPower)+MinPower;
 			int spawnNum = Random.Range(0, SpawnLocations.Length);
+			Debug.Log("Sending boat out from location " + spawnNum);
+			
 			Vector3 spawnLocation = SpawnLocations[spawnNum].transform.position;
-
-			Quaternion rot = Quaternion.LookRotation(EndLocations[spawnNum].transform.position - spawnLocation);
+			
+			Vector3 startVector= EndLocations[spawnNum].transform.position - spawnLocation;
+			startVector.y=0;
+			
+			Quaternion rot = Quaternion.LookRotation(startVector);
 			
 			Rigidbody newBoat = Instantiate(BoatPrefab, spawnLocation, rot) as Rigidbody;
 			
-			newBoat.AddRelativeForce(Vector3.forward * 10f, ForceMode.Impulse);
+			newBoat.AddRelativeForce(Vector3.forward * power, ForceMode.Impulse);
 			
 			//newBoat.Target = EndLocations[spawnNum];
 			
